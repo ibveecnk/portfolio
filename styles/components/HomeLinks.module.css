@@ -1,0 +1,24 @@
+.h2 {
+  background-color: red;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 5px;
+  margin: 2px 10px;
+  border: 2px solid black;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
