@@ -12,15 +12,15 @@ const Home: NextPage = () => {
           <ExperienceCard
             text="Kübler Hallenheizungen"
             link="https://www.kuebler-hallenheizungen.de"
-            from={new Date(2022, 1, 1)}
+            from={new Date(2022, 1)}
             to={new Date(Date.now())}
             ongoing={true}
           ></ExperienceCard>
           <ExperienceCard
             text="Ueberbit"
             link="https://www.ueberbit.de"
-            from={new Date(2020, 2, 1)}
-            to={new Date(2021, 3, 1)}
+            from={new Date(2020, 2)}
+            to={new Date(2021, 3)}
           ></ExperienceCard>
         </div>
       </main>
