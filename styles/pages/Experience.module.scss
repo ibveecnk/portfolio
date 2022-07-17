@@ -12,6 +12,15 @@
   align-items: center;
 }
 
+.columnWrapper {
+  display: flex;
+}
+
+.columnTitle {
+  font-size: large;
+  font-weight: bold;
+}
+
 .cardWrapper {
   display: flex;
   flex-direction: column;
@@ -19,6 +28,7 @@
   align-items: center;
   flex-wrap: nowrap;
   text-align: center;
+  margin: 10px 10px;
 }
 
 .card {
