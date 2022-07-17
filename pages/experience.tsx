@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { HomeLinks } from "../components/Home/HomeLinks";
-import styles from "../styles/pages/Home.module.scss";
+import styles from "../styles/pages/Experience.module.scss";
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1>Iven Beck</h1>
-        <HomeLinks />
+        <h1>todo.</h1>
       </main>
     </div>
   );
