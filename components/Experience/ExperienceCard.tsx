@@ -32,8 +32,8 @@ export const ExperienceCard: React.FC<Props> = ({
   return (
     <Link href={link} passHref>
       <div className={styles.card}>
-        {text}
-        <div>{dateSpanToString(from, to)}</div>
+        <div>{text}</div>
+        <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
       </div>
     </Link>
   );
