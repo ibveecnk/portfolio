@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <h1>Iven Beck</h1>
         <HomeLinks />
       </main>
-      <footer className={styles.footer}>Iven Beck - 2022</footer>
+      {/**<footer className={styles.footer}>Iven Beck - 2022</footer>*/}
     </div>
   );
 };
