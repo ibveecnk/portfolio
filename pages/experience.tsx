@@ -42,8 +42,9 @@ const Home: NextPage = () => {
               text="Abitur"
               grade={1.1}
               link="https://www.hfswe.de"
-              uni="Hans-Freudenberg-Schule Weinheim"
-              ongoing={true}
+              uni="Hans-Freudenberg-Schule"
+              from={new Date(2018, 8)}
+              to={new Date(2021, 6)}
             ></EducationCard>
           </div>
         </div>
