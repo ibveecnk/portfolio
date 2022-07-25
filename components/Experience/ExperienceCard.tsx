@@ -4,7 +4,7 @@ import styles from "/styles/pages/Experience.module.scss";
 interface Props {
   link: string;
   company: string;
-  position?: string;
+  position: string;
   from: Date;
   to: Date;
   ongoing?: boolean;
@@ -27,19 +27,15 @@ export const ExperienceCard: React.FC<Props> = ({
       year: "numeric",
       month: "long",
     });
-    ongoing ? (toString += " (today)") : null;
+    ongoing ? (toString = "today") : null;
     return `${fromString} - ${toString}`;
   };
 
   return (
     <Link href={link} passHref>
       <div className={styles.card}>
-        <div className={styles.cardHead}>{company}</div>
-        {position ? (
-          <div className={styles.cardText + " " + styles.cardBold}>
-            {position}
-          </div>
-        ) : null}
+        <div className={styles.cardHead}>{position}</div>
+        <div className={styles.cardText + " " + styles.cardBold}>{company}</div>
         <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
       </div>
     </Link>

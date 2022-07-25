@@ -29,7 +29,7 @@ export const EducationCard: React.FC<Props> = ({
       year: "numeric",
       month: "long",
     });
-    ongoing ? (toString += " (today)") : null;
+    ongoing ? (toString = "today") : null;
     return `${fromString} - ${toString}`;
   };
 
