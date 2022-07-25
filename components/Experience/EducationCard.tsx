@@ -25,11 +25,13 @@ export const EducationCard: React.FC<Props> = ({
       year: "numeric",
       month: "long",
     });
-    let toString = to.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-    });
-    ongoing ? (toString = "today") : null;
+    let toString;
+    ongoing
+      ? (toString = "today")
+      : (toString = to.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+        }));
     return `${fromString} - ${toString}`;
   };
 
@@ -41,7 +43,11 @@ export const EducationCard: React.FC<Props> = ({
         {from && to ? (
           <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
         ) : null}
-        {grade ? <div className={styles.cardText}>Grade: {grade}</div> : null}
+        {grade ? (
+          <div className={styles.cardText + " " + styles.cardBold}>
+            Final Grade: {grade.toFixed(1).replace(".", ",")}
+          </div>
+        ) : null}
       </div>
     </Link>
   );

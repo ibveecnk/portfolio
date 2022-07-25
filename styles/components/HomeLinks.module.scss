@@ -13,13 +13,13 @@
 .card {
   padding: 5px;
   margin: 2px 10px;
-  border: 2px solid black;
-  transition: all 0.5s;
+  transition: all var(--animation-time);
+  border: 2px solid var(--color-secondary);
 }
 
 .card:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--color-secondary-l);
+  color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all var(--animation-time);
 }

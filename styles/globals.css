@@ -7,16 +7,23 @@ body {
 }
 
 html {
-  --black: #1a1c20;
-  --white: #fff;
-  --green: #00c380;
-  --d-green: #019b66;
-  --orange: #ef6206;
-  --yellow: #dfa500;
-  --l-yellow: #edd594;
-  --light: #fbfbfb;
+  --oxford-blue: #001b2eff;
+  --charcoal: #294c60ff;
+  --charcoal-l: rgb(72, 102, 120);
+  --cadet-blue-crayola: #adb6c4ff;
+  --papaya-whip: #ffefd3ff;
+  --peach-crayola: #ffc49bff;
 
-  background-color: var(--l-yellow);
+  --animation-time: 0.2s;
+
+  --color-primary: var(--oxford-blue);
+  --color-secondary: var(--charcoal);
+  --color-secondary-l: var(--charcoal-l);
+  --color-text-primary: var(--cadet-blue-crayola);
+  --color-text-secondary: var(--oxford-blue);
+
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 @keyframes bounce-in {
