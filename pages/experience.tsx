@@ -13,14 +13,16 @@ const Home: NextPage = () => {
           <div className={styles.cardWrapper}>
             <div className={styles.columnTitle}>Work</div>
             <ExperienceCard
-              text="Kübler Hallenheizungen"
+              company="KÜBLER GmbH"
+              position="Working Student"
               link="https://www.kuebler-hallenheizungen.de"
               from={new Date(2022, 1)}
               to={new Date(Date.now())}
               ongoing={true}
             ></ExperienceCard>
             <ExperienceCard
-              text="Ueberbit"
+              company="UEBERBIT GmbH"
+              position="Student Job"
               link="https://www.ueberbit.de"
               from={new Date(2020, 2)}
               to={new Date(2021, 3)}
@@ -34,6 +36,13 @@ const Home: NextPage = () => {
               uni="University of Mannheim"
               from={new Date(2021, 8)}
               to={new Date(Date.now())}
+              ongoing={true}
+            ></EducationCard>
+            <EducationCard
+              text="Abitur"
+              grade={1.1}
+              link="https://www.hfswe.de"
+              uni="Hans-Freudenberg-Schule Weinheim"
               ongoing={true}
             ></EducationCard>
           </div>

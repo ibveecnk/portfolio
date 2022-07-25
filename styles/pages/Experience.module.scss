@@ -14,6 +14,8 @@
 
 .columnWrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .columnTitle {
@@ -28,7 +30,8 @@
   align-items: center;
   flex-wrap: nowrap;
   text-align: center;
-  margin: 10px 10px;
+  margin: 10px 20px;
+  min-width: fit-content;
 }
 
 .card {
@@ -38,8 +41,16 @@
   transition: all 0.5s;
 }
 
+.cardHead {
+  margin-bottom: 5px;
+}
+
+.cardBold {
+  font-weight: bold;
+}
+
 .cardText {
-  margin: 2px 0;
+  margin: 0px 0;
   font-size: small;
 }
 
@@ -47,4 +58,5 @@
   background-color: black;
   color: white;
   transition: all 0.5s;
+  cursor: pointer;
 }

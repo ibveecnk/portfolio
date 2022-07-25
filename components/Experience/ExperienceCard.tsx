@@ -3,15 +3,17 @@ import styles from "/styles/pages/Experience.module.scss";
 
 interface Props {
   link: string;
-  text: string;
+  company: string;
+  position?: string;
   from: Date;
   to: Date;
   ongoing?: boolean;
 }
 
 export const ExperienceCard: React.FC<Props> = ({
-  text,
+  company,
   link,
+  position,
   from,
   to,
   ongoing = false,
@@ -32,7 +34,12 @@ export const ExperienceCard: React.FC<Props> = ({
   return (
     <Link href={link} passHref>
       <div className={styles.card}>
-        <div>{text}</div>
+        <div className={styles.cardHead}>{company}</div>
+        {position ? (
+          <div className={styles.cardText + " " + styles.cardBold}>
+            {position}
+          </div>
+        ) : null}
         <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
       </div>
     </Link>

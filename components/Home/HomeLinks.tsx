@@ -1,5 +1,5 @@
 import styles from "/styles/components/HomeLinks.module.scss";
-import { HomeLink } from "./sub/HomeLink";
+import { HomeLink } from "./HomeLink";
 
 interface Props {}
 

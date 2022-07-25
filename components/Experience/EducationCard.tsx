@@ -5,8 +5,9 @@ interface Props {
   link: string;
   text: string;
   uni: string;
-  from: Date;
-  to: Date;
+  from?: Date;
+  to?: Date;
+  grade?: number;
   ongoing?: boolean;
 }
 
@@ -16,6 +17,7 @@ export const EducationCard: React.FC<Props> = ({
   uni,
   from,
   to,
+  grade,
   ongoing = false,
 }) => {
   const dateSpanToString = (from: Date, to: Date) => {
@@ -34,9 +36,12 @@ export const EducationCard: React.FC<Props> = ({
   return (
     <Link href={link} passHref>
       <div className={styles.card}>
-        <div>{text}</div>
-        <div className={styles.cardText}>{uni}</div>
-        <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
+        <div className={styles.cardHead}>{text}</div>
+        <div className={styles.cardText + " " + styles.cardBold}>{uni}</div>
+        {from && to ? (
+          <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
+        ) : null}
+        {grade ? <div className={styles.cardText}>Grade: {grade}</div> : null}
       </div>
     </Link>
   );
