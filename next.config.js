@@ -2,10 +2,7 @@
 const nextConfig = {
   i18n: {
     locales: ["en", "de"],
-    defaultLocale: "de",
-    localeDetection: true,
-    localeCookieName: "locale",
-    localeCookieMaxAge: 31536000,
+    defaultLocale: "en",
   },
   reactStrictMode: true,
   swcMinify: true,
