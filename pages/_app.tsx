@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Iven Beck</title>
         <meta name="description" content="My personal portfolio." />
+        <meta name="robots" content="index, follow, archive" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
