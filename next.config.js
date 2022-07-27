@@ -8,6 +8,7 @@ const nextConfig = {
   swcMinify: true,
   headers: {
     "x-robots-tag": "index, follow, archive",
+  },
 };
 
 module.exports = nextConfig;
