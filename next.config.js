@@ -6,6 +6,8 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  headers: {
+    "x-robots-tag": "index, follow, archive",
 };
 
 module.exports = nextConfig;
