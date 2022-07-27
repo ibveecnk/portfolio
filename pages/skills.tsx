@@ -16,7 +16,7 @@ const Home: NextPage = () => {
             link="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
           />
           <SkillCard
-            link="https://www.typescript.org/"
+            link="https://www.typescriptlang.org/"
             title="TypeScript"
             text="A superset of JavaScript with types, that compiles to plain JavaScript"
           ></SkillCard>
