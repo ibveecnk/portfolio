@@ -41,6 +41,7 @@ const Home: NextPage = () => {
           {!error && githubData ? (
             githubData.map((d, index) => (
               <ProjectCard
+                key={index}
                 title={d.name}
                 description={d.description}
                 link={d.html_url}
