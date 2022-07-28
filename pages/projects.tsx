@@ -2,44 +2,26 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { ProjectCard } from "../components/Projects/ProjectCard";
 import styles from "../styles/pages/Projects.module.scss";
+import { useProjects } from "../hooks/useProjects";
 
 const Home: NextPage = () => {
   const [githubData, setGithubData] = useState<any>();
   const [error, setError] = useState<string>();
-
-  useEffect(() => {
-    getGitHubData();
-  }, []);
-
-  const getGitHubData = async () => {
-    const response = await fetch("https://api.github.com/users/ibveecnk/repos");
-    const json = await response.json();
-
-    if (!response.ok) {
-      setError(json.message || "Failed to fetch projects");
-      return;
-    }
-
-    const filteredJson = json.filter((item: any) => {
-      return !!item.description;
-    });
-
-    setGithubData(filteredJson);
-  };
+  const { data, isLoading, isError } = useProjects();
 
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h1>My Projects</h1>
         <div className={styles.cardWrapper}>
-          {error ? (
+          {isError ? (
             <>
               <div className={styles.cardBold}>An error occured:</div>
               <div>{error}</div>
             </>
           ) : null}
-          {!error && githubData ? (
-            githubData.map((d, index) => (
+          {!isError && data ? (
+            data.map((d, index) => (
               <ProjectCard
                 key={index}
                 title={d.name}
@@ -47,7 +29,7 @@ const Home: NextPage = () => {
                 link={d.html_url}
               />
             ))
-          ) : !error ? (
+          ) : isLoading ? (
             <div>Loading projects...</div>
           ) : null}
         </div>
