@@ -4,9 +4,10 @@
 
 // Background parameters
 const PIXELSIZE = 20,
-  LIGHTRADIUS = 300,
+  LIGHTRADIUS = 150,
   STEP = 0.1,
-  ILLUMINATION = 20;
+  ILLUMINATION = 20,
+  BASEBRIGHTNESS = 10;
 
 let mouseX, mouseY;
 let mouseOver = true;
@@ -52,7 +53,7 @@ const draw = () => {
             LIGHTRADIUS
           : 0;
       tileBrightness <= 0 ? (tileBrightness = 0) : null;
-      tileBrightness += 20; // minimum brightness
+      tileBrightness += BASEBRIGHTNESS; // minimum brightness
 
       let color = `hsl(${
         Math.cos((i + j) / 2 + colorOffset) * 20 + 238
