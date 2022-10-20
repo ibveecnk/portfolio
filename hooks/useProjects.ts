@@ -1,23 +1,27 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+import { useEffect } from "react";
 import useSWRImmutable from "swr/immutable";
 import { fetcher } from "./fetcher";
 
 // Rudimentary cache for projects, but works well :)
-const Projects = { data: null, isError: null, isLoading: false };
+type Projects = { data: any, fetchedAt: number, isError: boolean, isLoading: boolean };
 
-export const useProjects = () => {
-  if (Projects.data === null) {
-    const { data, error } = useSWRImmutable(
-      "https://api.github.com/users/ibveecnk/repos",
-      fetcher
-    );
-
-    return {
-      data,
-      isLoading: !error && !data,
-      isError: error,
-    };
-  } else {
-    return Projects;
+export const useProjects = () : Projects => {
+  const res: Projects = {
+    data: null,
+    fetchedAt: 0,
+    isError: false,
+    isLoading: false
   }
+
+    fetch(
+      "https://api.github.com/users/ibveecnk/repos").then((res) => res.json()).then((data) => { 
+        res.data = data;
+        res.fetchedAt = Date.now();
+        res.isError = !data;
+        res.isLoading = !data;
+
+        return res;
+
+      });
+      return res;
 };

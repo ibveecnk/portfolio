@@ -15,6 +15,7 @@
   margin: 2px 10px;
   transition: all var(--animation-time);
   border: 2px solid var(--color-secondary);
+  backdrop-filter: blur(var(--card-blur));
 }
 
 .card:hover {
