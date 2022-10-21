@@ -43,11 +43,6 @@ export const EducationCard: React.FC<Props> = ({
         {from && to ? (
           <div className={styles.cardText}>{dateSpanToString(from, to)}</div>
         ) : null}
-        {grade ? (
-          <div className={styles.cardText + " " + styles.cardBold}>
-            Final Grade: {grade.toFixed(1).replace(".", ",")}
-          </div>
-        ) : null}
       </div>
     </Link>
   );
