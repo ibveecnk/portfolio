@@ -76,6 +76,16 @@ const Home: NextPage = () => {
             title="Next.js"
             text="A framework for server-rendered React applications"
           ></SkillCard>
+          <SkillCard
+            title="Framer Motion"
+            link="https://www.framer.com/motion/"
+            text="A motion animation library for React"
+          ></SkillCard>
+          <SkillCard
+            title="Tailwind CSS"
+            link="https://tailwindcss.com/"
+            text="A utility-first CSS framework, that allows to quickly prototype and build websites"
+          ></SkillCard>
         </div>
       </main>
     </div>

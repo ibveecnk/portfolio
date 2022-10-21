@@ -22,6 +22,8 @@ html {
   --color-text-primary: var(--cadet-blue-crayola);
   --color-text-secondary: var(--oxford-blue);
 
+  --card-blur: 25px;
+
   background-color: var(--color-primary);
   color: var(--color-text-primary);
 }

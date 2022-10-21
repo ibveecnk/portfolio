@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { GetStaticPropsContext } from "next";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +13,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="robots" content="index, follow, archive" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <div id="contentWrapper">
+        <Component {...pageProps} />
+        <canvas
+          id="background"
+          style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
+        >
+          Canvas is not supported in your browser.
+        </canvas>
+      </div>
+      <Script
+        id="bg-renderer"
+        src="/background-renderer.js"
+        strategy="lazyOnload"
+      />
     </>
   );
 }
