@@ -7,7 +7,7 @@ const PIXELSIZE = 20,
   LIGHTRADIUS = 150,
   STEP = 0.1,
   ILLUMINATION = 20,
-  BASEBRIGHTNESS = 10;
+  BASEBRIGHTNESS = 15;
 
 let mouseX, mouseY;
 let mouseOver = true;
