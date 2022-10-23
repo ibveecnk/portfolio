@@ -38,6 +38,7 @@ const draw = () => {
   const ctx = canvas.getContext("2d");
   if (!ctx || !window.visualViewport) return;
 
+  colorOffset %= 2 * Math.PI;
   colorOffset += STEP;
 
   for (let i = 0; i < numTilesX; i++) {
@@ -84,6 +85,19 @@ const initCanvas = () => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
+
+  /*
+  window.addEventListener("touchmove", (e) => {
+    // Disable mouse listeners if touched
+    mouseOver = true;
+    window.removeEventListener("mouseenter");
+    window.removeEventListener("mouseleave");
+    window.removeEventListener("mousemove");
+    const pointer = e.touches[0];
+    mouseX = pointer.clientX;
+    mouseY = pointer.clientY;
+  });
+  */
 
   setInterval(draw, 1000 / 24); // 24 fps
 };

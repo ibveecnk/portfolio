@@ -18,9 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <canvas
           id="background"
           style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
-        >
-          Canvas is not supported in your browser.
-        </canvas>
+        ></canvas>
       </div>
       <Script
         id="bg-renderer"

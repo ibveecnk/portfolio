@@ -1,8 +1,8 @@
-FROM node:lts-alpine
+FROM node:alpine
 ENV NODE_ENV=production
 WORKDIR /src
 COPY . .
-RUN npm install --production --silent && mv node_modules ../
+RUN npm install --production --silent
 RUN npm run build
 EXPOSE 3000
 RUN chown -R node /src
